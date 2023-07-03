@@ -1,0 +1,45 @@
+{
+    "student": 
+    {
+        "student_id": 12345,
+        "first_name": "Wallace",
+        "last_name": "Miller",
+        "enrollments":[
+            {
+                "enrollment_id": "e1",
+                "term": " Summer 2022",
+                "gpa": 3.5,
+                "start_date": "06/05/2022",
+                "end_date": "08/11/2022",
+                "link_enrollments_courses":
+                [{
+                    "enrollment_course_id": "ec1",
+                    "enrollment_id": "e1",
+                    "course_id":"EN102"                  
+                }],
+                "courses": [
+                    {
+                        "course_id": "MA102",
+                        "description": "College Algebra",
+                        "instructor": "Prof. Ronk",
+                        "grade": "A"                   
+                    },
+                    {
+                        "course_id": "EN102",
+                        "description": "English Comp",
+                        "instructor": "Prof. Florence",
+                        "grade": "B"         
+                    },
+                    {
+                        "course_id": "SCI254",
+                        "description": "Biology",
+                        "instructor": "Prof. Graley",
+                        "grade": "A"         
+                    }
+                ]
+               
+            }
+        ]
+    }
+    }
+    

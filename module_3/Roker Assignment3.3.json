@@ -1,0 +1,31 @@
+{
+    "publisher": 
+    {
+        "publisher_name": "HarperCollins Publisher",
+        "publisher_code": 6,
+        "publisher_address": "195 Broadway, New York, NY 10007"
+    },
+
+    "book":
+    {
+        "book_ISBN": 9700062389558,
+        "book_name": "The Everything Box",
+        "book_prices": 16.99,
+        "publisher_code": 6,
+        "link_book_author": 
+        [{
+            "book_ISBN": 9700062389558,
+            "author_id": 2990
+        }]
+    },
+
+    "author":
+    {
+        "author_id": 2990,
+        "author_first_name": "Richard",
+        "author_last_name": "Kadrey",
+        "author_phone": 5125550134,
+        "author_email": "richard_kadrey@gmail.com"
+    }
+
+}

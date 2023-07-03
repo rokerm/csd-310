@@ -1,0 +1,31 @@
+{
+    "user":
+    {
+        "user_id": 54321,
+        "user_name": "millerw",
+        "user_email": "wallmill@gmail.com",
+        "Link_User_Roles": [{
+            "user_id": 54321,
+            "role_id": 891
+        }]
+    },
+
+    "roles":
+    {
+        "role_id": 891,
+        "role_desc": "Network Administrator",
+        "role_type": "Entry Level",
+        "Link_Role_Permission": [{
+            "role_id": 891,
+            "permission_id": 5
+        }]
+    },
+
+    "permissions":
+    {
+        "permission_id": 5,
+        "permission_desc": "Administrator",
+        "permission_type": "Super User"
+    }
+    
+}

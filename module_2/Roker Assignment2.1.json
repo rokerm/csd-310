@@ -1,0 +1,47 @@
+{
+    "customer": 
+        {
+            "_id": "1",
+            "first_name": "Edward",
+            "last_name": "Elrich",
+            "date_of_birth": "09/06/1992",
+            "user_name":"elriche"
+        },
+    
+    "invoices": [
+        {
+        "_id": "101",
+        "date_created": "06/13/2023",
+        "date_shipped": "06/15/2023",
+        "subtotal": 200.00,
+        "line_items": [
+            {
+                "_id": "201",
+                "name": "Product X",
+                "price": 50.00,
+                "quantity": 2                
+            },
+            {
+                "_id": "202",
+                "name": "Product Y",
+                "price": 25.00,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "_id": "102",
+        "date_created": "06/13/2023",
+        "date_shipped": "06/15/2023",
+        "subtotal": 75.00,
+        "line_items": [
+            {
+                "_id": "203",
+                "name": "Product Zf",
+                "price": 75.00,
+                "quantity": 1
+            }
+        ]
+    }
+]
+}

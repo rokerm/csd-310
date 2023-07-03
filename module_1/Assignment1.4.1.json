@@ -1,0 +1,32 @@
+{
+    "user_id": "user_id_input",
+    "birthdate": "birthdate_input",
+    "roles": [
+        {
+            "role_id": "role_id_1",
+            "role_name": "role_name_1"
+        },
+        {
+            "role_id": "role_id_2",
+            "role_name": "role_name_2"
+        },
+        {
+            "role_id": "role_id_3",
+            "role_name": "role_name_3"
+        }
+    ]
+    ,"dependents": [
+        {
+            "dependent_id": "dependent_id_1",
+            "dependent_name": "dependent_name_1"
+        },
+        {
+            "dependent_id": "dependent_id_2",
+            "dependent_name": "dependent_name_2"
+        },
+        {
+            "dependent_id": "dependent_id_3",
+            "dependent_name": "dependent_name_3"
+        }
+    ]
+}
