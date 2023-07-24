@@ -1,3 +1,7 @@
+#Malachi Roker
+#07/23/2023
+#CYBR410
+
 import mysql.connector
 from mysql.connector import errorcode
 
