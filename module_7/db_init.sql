@@ -68,3 +68,5 @@ INSERT INTO player(first_name, last_name, team_id)
 
 INSERT INTO player(first_name, last_name, team_id)
     VALUES('Azog', 'The Defiler', (SELECT team_id FROM team WHERE team_name = 'Team Sauron'));
+
+
