@@ -49,7 +49,8 @@ def validate_user():
         if user_id < 0 or user_id > 3:
             print('\n Invalid customer id, session has ended ')
             sys.exit(0)
-
+            
+        print("Login Successful!")
 
         return user_id 
     except ValueError:
