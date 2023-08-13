@@ -18,7 +18,7 @@ def show_menu():
     #shows main page
     print("\n Main Page")
 
-    print("\n 1. Our Books\n 2. Account Settings\n 3. Our Location\n 4. Close")
+    print("\n 1. Our Books\n 2. Our Locations\n 3. Account Settings\n 4. Close")
 
     try:
         select = int(input("\n Please enter a number from the choices above. \n"))
@@ -43,7 +43,7 @@ def show_books(_cursor):
 def validate_user():
 #user validation
     try:
-        user_id = int (input('\n Please enter your customer id '))
+        user_id = int (input('\n Please enter your customer id \n '))
 
 # if the user's choice is less than 0 or greater than 3, display an error message
         if user_id < 0 or user_id > 3:
@@ -61,10 +61,10 @@ def show_account_settings():
 
     try:
         print("\n -- Account Settings --")
-        print("\n 1. Wishlist\n 2. Add Book\n 3. Main Page")
-        account_option = int(input('\n Please enter a number to navigate through the customer menu'))
+        print("\n 1. Wishlist\n 2. Add Book\n 3. Main Page\n ")
+        account_settings = int(input('\n Please enter a number to navigate through the customer menu \n'))
 
-        return account_option
+        return account_settings
     except ValueError:
         print("\n Invalid entry, session has ended")
         sys.exit(0)
@@ -90,8 +90,7 @@ def show_books_to_add(_cursor, _user_id):
 
     query = ("SELECT book_id, book_name, author, details "
             "FROM book "
-            "LEFT JOIN wishlist ON book.book_id = wishlist.book_id AND wishlist.user_id = {} "
-            "WHERE book_id NOT IN (SELECT book_id FROM wishlist WHERE user_id = {})".format(_user_id))
+            "WHERE book_id NOT IN (SELECT book_id FROM wishlist WHERE user_id = {})".format(_user_id, _user_id))
     print(query)
 
     _cursor.execute(query)
@@ -132,24 +131,23 @@ try:
         if user_selection == 1:
             show_books(cursor)
 
-        # if the user chooses option 2, validate user id and and show account settings
+        # if the user chooses option 2, display location
         if user_selection == 2:
-            my_user_id = validate_user()
-            account_option = show_account_settings()
-
-        # if the user chooses option 3, display location
-        if user_selection == 3:
             show_locations(cursor)
+        
+        # if the user chooses option 3, validate user id and and show account settings
+        if user_selection == 3:
+            my_user_id = validate_user()
+            account_settings = show_account_settings()
 
-            # while account option doesn't equal 3
-            while account_option != 3:
+            while account_settings != 3:
 
-                # if the user chooses option 1 it will display user and wishlist 
-                if account_option == 1:
+             # if the user chooses option 1 it will display user and wishlist 
+                if account_settings == 1:
                     show_wishlist(cursor, my_user_id)
 
                 # if the user chooses option 2, show the wishlist items not chosen by the user
-                if account_option == 2:
+                if account_settings == 2:
 
                     # show the books not chosen by the user
                     show_books_to_add(cursor, my_user_id)
@@ -163,13 +161,13 @@ try:
                     db.commit() # commit changes
 
                     print("\n Book id: {} was added to your wishlist!".format(book_id))
-
-                # if the user's choice is less than 0 or greater than 3, display an error message
-                if account_option < 0 or account_option > 3:
+                                
+                    # if the user's choice is less than 0 or greater than 2, display an error message
+                if account_settings < 0 or account_settings > 3:
                     print("\n Invalid option, please try again.")
 
-                # show the account menu 
-                account_option = show_account_settings()
+                    # show the account menu 
+                account_settings = show_account_settings()
         
         # if the user's choice is less than 0 or greater than 4, display an error message
         if user_selection < 0 or user_selection > 4:
